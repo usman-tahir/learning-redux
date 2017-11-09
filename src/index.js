@@ -1,4 +1,9 @@
 
-import { createPost } from './actionTypes';
+import { createPost, editPost, setFilter } from './actions';
+import { postsReducer } from './reducers'
 
-console.log(createPost('John Doe', 'hello world'))
+const initialState = []
+const action = createPost('John Doe', 'hello world')
+const newState = postsReducer(initialState, action)
+
+console.log(newState)
